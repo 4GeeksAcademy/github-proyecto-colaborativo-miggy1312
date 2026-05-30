@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasarela de Pago Seguro | Aura Thread</title>
+  <meta name="description" content="Finaliza tu compra de forma segura en Aura Thread. Introduce tus datos de envío y pago seguro.">
+  <link rel="canonical" href="https://www.aurathread.com/checkout.html">
+  
+  <!-- SEO & GEO Meta Tags -->
+  <meta name="geo.region" content="ES-MD">
+  <meta name="geo.placename" content="Madrid">
+  <meta name="geo.position" content="40.4203;-3.7018">
+  <meta name="ICBM" content="40.4203, -3.7018">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            },
+            neutral: {
+              950: '#0b0f19',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema.org CheckoutPage JSON-LD -->
+  <script type="application/ld-json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CheckoutPage",
+    "name": "Pasarela de Pago Aura Thread",
+    "description": "Formulario de pago en 3 pasos con cifrado de seguridad SSL.",
+    "url": "https://www.aurathread.com/checkout.html"
+  }
+  </script>
+
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-4 text-center font-medium tracking-wide">
+    Envío gratuito en pedidos superiores a 100€ • Devoluciones fáciles en 30 días
+  </div>
+
+  <!-- Header & Navbar -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+          <svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+          </svg>
+          <span class="font-display font-bold text-xl tracking-tight bg-gradient-to-r from-slate-900 via-slate-800 to-brand-600 bg-clip-text text-transparent">AURA THREAD</span>
+        </a>
+
+        <!-- Middle lock icon indicating secure area -->
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+          <svg class="h-4.5 w-4.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          Pago 100% Seguro
+        </div>
+
+        <!-- Link back to cart -->
+        <div>
+          <a href="carrito.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 flex items-center gap-1.5 transition-colors">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Volver al carrito
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 relative">
+    
+    <!-- Wizard View -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      
+      <!-- Left Column: Stacked Form Sections (Takes 2/3 of grid) -->
+      <section class="lg:col-span-2">
+        <form action="index.html" method="GET" class="space-y-8">
+          
+          <!-- SECTION 1: Personal Details -->
+          <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Paso 1</span>
+              <h2 class="font-display font-bold text-xl text-slate-900 mt-2">Datos Personales</h2>
+              <p class="text-xs text-slate-400 mt-0.5">Introduce tus datos para registrar y facturar tu pedido.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5 sm:col-span-2">
+                <label for="name" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Nombre Completo</label>
+                <input type="text" id="name" required placeholder="Ej: Sofía Pérez García" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="email" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Correo Electrónico</label>
+                <input type="email" id="email" required placeholder="sofia.perez@example.com" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Teléfono de Contacto</label>
+                <input type="tel" id="phone" required pattern="[0-9]{9,15}" placeholder="Ej: 612345678" class="form-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Shipping Address -->
+          <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Paso 2</span>
+              <h2 class="font-display font-bold text-xl text-slate-900 mt-2">Dirección de Entrega</h2>
+              <p class="text-xs text-slate-400 mt-0.5">Especifica la dirección física donde recibirás tus prendas Aura Thread.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="space-y-1.5 sm:col-span-3">
+                <label for="address" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Dirección Principal</label>
+                <input type="text" id="address" required placeholder="Ej: Calle de la Moda 12, Piso 3A" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="postalcode" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Código Postal</label>
+                <input type="text" id="postalcode" required pattern="[0-9]{5}" placeholder="Ej: 28004" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="city" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Ciudad / Municipio</label>
+                <input type="text" id="city" required placeholder="Madrid" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="province" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Provincia</label>
+                <input type="text" id="province" required placeholder="Madrid" class="form-input">
+              </div>
+
+              <div class="space-y-1.5 sm:col-span-3">
+                <label for="country" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">País / Región</label>
+                <select id="country" required class="form-input">
+                  <option value="ES" selected>España</option>
+                  <option value="PT">Portugal</option>
+                  <option value="FR">Francia</option>
+                  <option value="IT">Italia</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: Card Payment -->
+          <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Paso 3</span>
+              <h2 class="font-display font-bold text-xl text-slate-900 mt-2">Pago con Tarjeta</h2>
+              <p class="text-xs text-slate-405 mt-0.5">Introduce los datos de tu tarjeta de crédito o débito. La transmisión de datos está cifrada.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="space-y-1.5 sm:col-span-3">
+                <label for="cardholder" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Titular de la Tarjeta</label>
+                <input type="text" id="cardholder" required placeholder="Ej: SOFIA PEREZ GARCIA" class="form-input uppercase">
+              </div>
+
+              <div class="space-y-1.5 sm:col-span-3">
+                <label for="cardnumber" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Número de Tarjeta</label>
+                <input type="text" id="cardnumber" required pattern="[0-9]{16}" placeholder="4000123456789010" maxlength="16" class="form-input">
+              </div>
+
+              <div class="space-y-1.5 sm:col-span-2">
+                <label for="cardexpiry" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Fecha de Caducidad (MMAA)</label>
+                <input type="text" id="cardexpiry" required pattern="[0-9]{4}" placeholder="1228" maxlength="4" class="form-input">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="cardcvv" class="text-xs font-bold uppercase tracking-wider text-slate-400 block">CVV</label>
+                <input type="text" id="cardcvv" required pattern="[0-9]{3,4}" placeholder="123" maxlength="4" class="form-input">
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 flex justify-end">
+              <button type="submit" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-lg text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-brand-600/10">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                Finalizar Compra y Pagar 390,00 €
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Right Column: Sidebar Order Summary (Takes 1/3 of grid) -->
+      <section class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm space-y-6">
+        <h3 class="font-display font-bold text-lg text-slate-900 border-b border-slate-100 pb-4">Tu Compra</h3>
+        
+        <!-- Cart Items Summarized List -->
+        <div class="space-y-4 max-h-96 overflow-y-auto pr-1">
+          
+          <!-- Item 1 -->
+          <div class="flex items-center gap-4 text-xs">
+            <div class="h-14 w-14 rounded-xl bg-slate-50 border overflow-hidden shrink-0">
+              <img src="images/sneaker.png" alt="Tenis Aura Minimalist" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-semibold text-slate-800 text-xs truncate">Tenis Aura Minimalist</h4>
+              <p class="text-[10px] text-slate-400 font-medium">Talla: M | Cantidad: 1</p>
+            </div>
+            <span class="font-bold text-slate-900 text-xs">120,00 €</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex items-center gap-4 text-xs">
+            <div class="h-14 w-14 rounded-xl bg-slate-50 border overflow-hidden shrink-0">
+              <img src="images/shirt.png" alt="Camisa Lino Organic" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-semibold text-slate-800 text-xs truncate">Camisa Lino Organic</h4>
+              <p class="text-[10px] text-slate-400 font-medium">Talla: M | Cantidad: 2</p>
+            </div>
+            <span class="font-bold text-slate-900 text-xs">130,00 €</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="flex items-center gap-4 text-xs">
+            <div class="h-14 w-14 rounded-xl bg-slate-50 border overflow-hidden shrink-0">
+              <img src="images/bag.png" alt="Mochila Matte Black" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-semibold text-slate-800 text-xs truncate">Mochila Matte Black</h4>
+              <p class="text-[10px] text-slate-400 font-medium">Talla: Talla Única | Cantidad: 1</p>
+            </div>
+            <span class="font-bold text-slate-900 text-xs">140,00 €</span>
+          </div>
+
+        </div>
+
+        <!-- Price Details Summary -->
+        <div class="border-t border-slate-100 pt-4 space-y-2.5 text-xs">
+          <div class="flex justify-between text-slate-500">
+            <span>Subtotal</span>
+            <span class="font-semibold text-slate-850">390,00 €</span>
+          </div>
+          <div class="flex justify-between text-slate-500">
+            <span>IVA (21% Incl.)</span>
+            <span class="text-slate-400">67,69 €</span>
+          </div>
+          <div class="flex justify-between text-slate-500">
+            <span>Envío</span>
+            <span class="font-semibold text-emerald-600">Gratis</span>
+          </div>
+          <div class="border-t border-slate-100 pt-3 flex justify-between text-sm">
+            <span class="font-bold text-slate-900">Total</span>
+            <span class="font-extrabold text-slate-900 text-base">390,00 €</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="contacto" class="bg-slate-955 text-slate-300 border-t border-slate-900 pt-16 pb-8" aria-label="Información del sitio">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      
+      <!-- Aura Thread Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <svg class="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+          </svg>
+          <span class="font-display font-bold text-lg tracking-tight text-white">AURA THREAD</span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Unión de elegancia y responsabilidad ecológica. Creando prendas atemporales diseñadas para perdurar en armonía con nuestro planeta.
+        </p>
+        <div class="flex gap-4 pt-2">
+          <a href="#" class="text-slate-400 hover:text-brand-500 transition-colors" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-brand-500 transition-colors" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categorías -->
+      <div class="space-y-4">
+        <h4 class="font-display font-semibold text-sm uppercase tracking-wider text-white">Categorías</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="catalogo.html" class="hover:text-white transition-colors">Calzado</a></li>
+          <li><a href="catalogo.html" class="hover:text-white transition-colors">Camisas</a></li>
+          <li><a href="catalogo.html" class="hover:text-white transition-colors">Pantalones</a></li>
+          <li><a href="catalogo.html" class="hover:text-white transition-colors">Accesorios</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="space-y-4">
+        <h4 class="font-display font-semibold text-sm uppercase tracking-wider text-white">Legal</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Política de Cookies</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Sobre la Marca</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="space-y-4" vocab="https://schema.org/" typeof="PostalAddress">
+        <h4 class="font-display font-semibold text-sm uppercase tracking-wider text-white">Contacto</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li class="flex items-start gap-2">
+            <svg class="h-5 w-5 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>
+              <span property="streetAddress">Calle de la Moda 12</span>, <br>
+              <span property="postalCode">28004</span>, <span property="addressLocality">Madrid</span>, España
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span>+34 910 123 456</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>hola@aurathread.com</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
+      &copy; 2026 Aura Thread. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>
